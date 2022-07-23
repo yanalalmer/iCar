@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+// components
 import BookCard from '../../components/bookCard';
 import { Navbar } from '../../components/navbar';
+import { AboutUs } from './aboutUs';
 import BookingSteps from './bookingSteps';
 import { TopSection } from './topSection';
 
@@ -24,6 +26,7 @@ export function HomePage() {
       <TopSection />
       <BookCard />
       <BookingSteps />
+      <AboutUs />
     </PageContainer>
   );
 }
