@@ -42,7 +42,7 @@ const ItemContainer = styled.div`
 `;
 const Icon = styled.span`
   ${tw`
-        text-red-500
+        text-yellow-500
         fill-current
         text-xs
         md:text-base
