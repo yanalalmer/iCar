@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Slide as Menu } from 'react-burger-menu';
+import { slide as Menu } from 'react-burger-menu';
 import { useMediaQuery } from 'react-responsive';
 import { SCREENS } from '../../globalStyles/screens';
+import { menuStyles } from './menuStyle';
 
 const ListContainer = styled.ul`
   ${tw`
@@ -25,27 +26,45 @@ const NavItem = styled.li`
         ease-in-out
         hover:text-gray-700
     `}
+  color: ${({ isMobile }) => (isMobile ? 'white' : 'black')};
 `;
 
 export function NavItems() {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
-  if (isMobile)
+  if (isMobile) {
     return (
-      <Menu>
+      <Menu right styles={menuStyles}>
         <ListContainer>
-          <NavItem>
+          <NavItem isMobile={isMobile}>
             <a href='#home'>Home</a>
           </NavItem>
-          <NavItem>
+          <NavItem isMobile={isMobile}>
             <a href='#cars'>Cars</a>
           </NavItem>
-          <NavItem>
+          <NavItem isMobile={isMobile}>
             <a href='#services'>Services</a>
           </NavItem>
-          <NavItem>
+          <NavItem isMobile={isMobile}>
             <a href='#contact'>Contact Us</a>
           </NavItem>
         </ListContainer>
       </Menu>
     );
+  }
+  return (
+    <ListContainer>
+      <NavItem>
+        <a href='#home'>Home</a>
+      </NavItem>
+      <NavItem>
+        <a href='#cars'>Cars</a>
+      </NavItem>
+      <NavItem>
+        <a href='#services'>Services</a>
+      </NavItem>
+      <NavItem>
+        <a href='#contact'>Contact Us</a>
+      </NavItem>
+    </ListContainer>
+  );
 }
