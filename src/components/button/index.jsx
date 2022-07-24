@@ -42,7 +42,8 @@ const FilledButton = styled(BaseButton)`
     `}
 `;
 
-export function Button({ theme, text }) {
-  if (theme === 'filled') return <FilledButton>{text}</FilledButton>;
-  else return <OutlinedButton>{text}</OutlinedButton>;
+export function Button({ theme, text, className }) {
+  if (theme === 'filled')
+    return <FilledButton className={className}>{text}</FilledButton>;
+  else return <OutlinedButton className={className}>{text}</OutlinedButton>;
 }
