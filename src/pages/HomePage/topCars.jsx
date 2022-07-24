@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+// components
 import Car from '../../components/car';
 // data
 import { CarsList } from '../../carsList';
