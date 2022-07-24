@@ -15,7 +15,6 @@ const LogoText = styled.div`
         text-xl
         md:text-2xl
         font-bold
-        text-black
         m-1
     `}
 `;
